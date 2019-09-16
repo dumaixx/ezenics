@@ -7,7 +7,7 @@
       class="overflow-y-auto"
       max-height="300"
     >
-      <v-container style="height: 1000px;"> </v-container>
+      <v-container style="height: 1000px;"><app-diagram></app-diagram> </v-container>
     </v-sheet>
     </v-content>
   </v-app>
@@ -22,7 +22,7 @@ export default {
   name: 'App',
   components: {
     ToolBar,
-    Diagram,
+    'app-diagram': Diagram,
   },
 };
 </script>

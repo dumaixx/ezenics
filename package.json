@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "jest"
   },
   "dependencies": {
     "@grapecity/wijmo.vue2.all": "^5.20192.624",
     "boots": "^0.3.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vuetify": "^2.0.0",
@@ -18,10 +20,28 @@
     "@mdi/font": "^4.4.95",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-vuetify": "^0.6.3",
+    "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "^1.2.2"
+    "vuetify-loader": "^1.2.2",
+    "webpack": "^4.40.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    }
   }
 }
